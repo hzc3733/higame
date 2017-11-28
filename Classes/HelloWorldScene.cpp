@@ -1,6 +1,7 @@
-
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+
+
 
 USING_NS_CC;
 
@@ -28,6 +29,8 @@ bool HelloWorld::init()
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	MenuItemImage
 
 	/*
     /////////////////////////////
