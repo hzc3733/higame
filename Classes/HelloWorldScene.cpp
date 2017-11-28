@@ -30,8 +30,27 @@ bool HelloWorld::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	MenuItemImage
+	auto spriteFrameCache = SpriteFrameCache::getInstance();
+	spriteFrameCache->addSpriteFramesWithFile("res/keydown.plist");
 
+	//SpriteFrameCache -> SpriteFrame -> Sprite
+	//方法1：
+	//auto keydirectionFrame = spriteFrameCache->getSpriteFrameByName("key_direction.png");
+	//auto sprite = Sprite::create();
+	//sprite->setDisplayFrame(keydirectionFrame);
+
+	//方法2：
+	//auto key_direction = Sprite::createWithSpriteFrame(keydirectionFrame);
+
+	//方法3:
+	auto key_direction = Sprite::createWithSpriteFrameName("key_direction.png");
+	auto key_down = Sprite::createWithSpriteFrameName("key_down.png");
+
+	key_direction->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	this->addChild(key_direction);
+
+	key_down->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	this->addChild(key_down);
 	/*
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
